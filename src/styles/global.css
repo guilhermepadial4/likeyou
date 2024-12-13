@@ -1,0 +1,37 @@
+:root {
+  --white: #fff;
+  --white-300: #f9f9f9;
+  --white-400: #f0f0f0;
+
+  --dark: #000;
+  --dark-100: #111111;
+
+  --gray-100: #ededed;
+  --gray-200: #e0e0e0;
+  --gray-300: #d4d4d8;
+  --gray-400: #cccccc;
+  --gray-500: #9e9d9d;
+  --gray-600: #666666;
+  --gray-700: #343a40;
+  --gray-800: #333333;
+  --gray-900: #18181b;
+
+  --pink-100: #f8d7da;
+
+  --blue-300: #1e7b9c;
+  --blue-500: #0a6789;
+
+  --orange-300: #ff7a4a;
+  --orange-500: #fa6632;
+
+  --yellow-500: #fecd23;
+
+  --green-100: #d4edda;
+  --green-500: #0a996f;
+
+  --background-web: #f7f9fa;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}

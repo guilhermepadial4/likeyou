@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="src/styles/reset.css" />
+    <link rel="stylesheet" href="src/styles/global.css" />
+    <link rel="stylesheet" href="src/styles/styles.css" />
+
+    <script defer src="src/scripts/index.js"></script>
+
+    <title>Likeyou-feed</title>
+  </head>
+  <body>
+    <header class="container__header">
+      <div class="header__left">
+        <img class="img__logo" src="src/assets/images/logo.png" alt="Logo" />
+        <div class="search__container">
+          <input class="input__search" type="text" placeholder="Buscar por nome..." />
+          <span class="search__icon" onclick="toggleSearchInput()">
+            <img src="src/assets/icons/search.svg" alt="Ícone de busca" />
+          </span>
+        </div>
+      </div>
+      <div class="header__right">
+        <button class="toggle-btn" onclick="toggleMenu()">
+          <span class="icon-open">☰</span>
+          <span class="icon-close">X</span>
+        </button>
+        <nav class="header__nav" id="mobileMenu">
+          <ul>
+            <li><a class="link__nav" href="#">Quem somos nós</a></li>
+            <li><a class="link__nav" href="#">Configurações</a></li>
+          </ul>
+          <a href="./src/assets/pages/welcome/index.html" class="btn login__btn">Login / Cadastrar</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Feed -->
+    <main class="feed__container">
+      <div class="card">
+        <div class="card__image-container">
+          <img
+            class="card__image"
+            src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages6.fanpop.com%2Fimage%2Fphotos%2F32600000%2Fharry-potter-harry-potter-32655227-1152-864.jpg&f=1&nofb=1&ipt=4fb0dd8378da388bfdf9befae29363c47dd979a5b337bcb2b4fd516cbcb59038&ipo=images"
+            alt="Imagem do usuário"
+          />
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Harry Potter</h3>
+          <p class="card__bio">
+            Harry Potter nasceu em 1980 e, ainda bebê, sobreviveu ao ataque de Lord Voldemort, que matou seus pais. Criado pelos tios,
+            descobriu aos 11 anos que era bruxo e foi para Hogwarts. Lá, fez grandes amigos e enfrentou o retorno de Voldemort. Ao longo de
+            sua vida, Harry lutou contra as forças das trevas e se tornou o herói que derrotou Voldemort na batalha final.
+          </p>
+        </div>
+        <div class="card__actions">
+          <button class="card__button like">
+            <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
+            Positivo
+          </button>
+          <button class="card__button dislike">
+            <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
+            Negativo
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-container">
+          <img
+            class="card__image"
+            src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages4.fanpop.com%2Fimage%2Fphotos%2F24400000%2FHermione-Granger-Wallpaper-hermione-granger-24489009-1024-768.jpg&f=1&nofb=1&ipt=ceec29c6fe11bddee3d3e86f8c1c1431a3bc2160ecc0f54432cba803a6644f4b&ipo=images"
+            alt="Imagem do usuário"
+          />
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Hermione Granger</h3>
+          <p class="card__bio">
+            Hermione Granger nasceu em 1979, filha de muggles. Desde pequena, se destacou pela inteligência e dedicação aos estudos. Aos 11
+            anos, foi aceita em Hogwarts, onde se tornou amiga de Harry Potter e Ron Weasley. Sempre pronta para ajudar, usou seu vasto
+            conhecimento para enfrentar desafios e lutar contra as forças das trevas. Ao longo de sua jornada, Hermione foi fundamental na
+            derrota de Voldemort e se tornou uma das bruxas mais respeitadas de sua geração.
+          </p>
+        </div>
+        <div class="card__actions">
+          <button class="card__button like">
+            <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
+            Positivo
+          </button>
+          <button class="card__button dislike">
+            <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
+            Negativo
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-container">
+          <img
+            class="card__image"
+            src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.the-leaky-cauldron.org%2Fwp-content%2Fuploads%2Fassets%2FRonald-Weasley-Wallpaper-ronald-weasley-25505490-1024-768.jpg&f=1&nofb=1&ipt=701cec2a58811becf49b6eb33dbb79f62494abb8937bc98edfb7ec61c066acb8&ipo=images"
+            alt="Imagem do usuário"
+          />
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Ron Weasley</h3>
+          <p class="card__bio">
+            Ron Weasley nasceu em 1980, o sexto de sete filhos de uma família de bruxos. Ele foi para Hogwarts em 1991, onde se tornou amigo
+            de Harry Potter e Hermione Granger. Ron é leal e corajoso, apesar de se sentir, às vezes, inseguro em comparação com seus
+            amigos. Junto com Harry e Hermione, participou das batalhas contra Voldemort, desempenhando papéis importantes na luta contra as
+            trevas. Após a vitória, Ron se tornou auror e casou-se com Hermione.
+          </p>
+        </div>
+        <div class="card__actions">
+          <button class="card__button like">
+            <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
+            Positivo
+          </button>
+          <button class="card__button dislike">
+            <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
+            Negativo
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-container">
+          <img
+            class="card__image"
+            src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F150325073456-michael-gambon-dumbledore-super-169.jpg&f=1&nofb=1&ipt=457a10378b68bd28d1e12ebfcfd5c1fbb1e813c463a89c6c29d5176b38e49c2a&ipo=images"
+            alt="Imagem do usuário"
+          />
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Albus Dumbledore</h3>
+          <p class="card__bio">
+            Albus Dumbledore, nascido em 1881, foi um dos bruxos mais poderosos da história. Diretor de Hogwarts, fundou a Ordem da Fênix e
+            lutou contra Voldemort. Orientou Harry Potter e seus amigos, ensinando sobre coragem e sacrifício. Dumbledore morreu em 1997,
+            mas seu legado perdura na luta contra o mal.
+          </p>
+        </div>
+        <div class="card__actions">
+          <button class="card__button like">
+            <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
+            Positivo
+          </button>
+          <button class="card__button dislike">
+            <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
+            Negativo
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-container">
+          <img
+            class="card__image"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.looper.com%2Fimg%2Fgallery%2Fthe-untold-truth-of-voldemort%2Fintro-1649393495.jpg&f=1&nofb=1&ipt=05a944322b6bc5dd7ffdbef34e368984acbdcceaab49b21cd8b9e8985daf95f9&ipo=images"
+            alt="Imagem do usuário"
+          />
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Tom Riddle</h3>
+          <p class="card__bio">
+            Tom Riddle, mais conhecido como Lord Voldemort, nasceu em 1926 e se tornou o bruxo das trevas mais temido da história. Criou
+            horcruxes para se tornar imortal e buscou dominar o mundo bruxo. Enfrentou Harry Potter várias vezes, sendo derrotado em 1998.
+            Sua obsessão pelo poder e o ódio aos nascidos trouxas foram suas motivações principais.
+          </p>
+        </div>
+        <div class="card__actions">
+          <button class="card__button like">
+            <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
+            Positivo
+          </button>
+          <button class="card__button dislike">
+            <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
+            Negativo
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

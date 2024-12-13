@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../styles/reset.css" />
+    <link rel="stylesheet" href="../../../../src/styles/global.css" />
+    <link rel="stylesheet" href="./src/style/style.css" />
+    <script defer src="src/script/index.js"></script>
+    <title>Recuperação de Senha</title>
+  </head>
+  <body>
+    <div class="login__container">
+      <img src="src/assets/images/logo.png" alt="Logo da Marca" class="logo" />
+
+      <h1>Redefinir Senha</h1>
+
+      <p class="email-sent-message" id="emailSentMessage">Um código será enviado para o seu email para redefinir sua senha</p>
+
+      <form class="form">
+        <div class="form__group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="email@exemplo.com" required />
+        </div>
+
+        <div class="form__group verification-group" id="verificationContainer" style="display: none">
+          <p class="verification__message" id="verificationMessage">Código de Verificação enviado para</p>
+
+          <div class="verification-input-group">
+            <input id="verificationCode" type="text" placeholder="Código" maxlength="4" />
+            <button id="verifyButton" disabled>Verificar</button>
+          </div>
+        </div>
+
+        <div id="newPasswordGroup" style="display: none">
+          <label for="newPassword">Nova Senha</label>
+
+          <div class="password-container">
+            <input class="new__password" id="newPassword" type="password" placeholder="Nova Senha" />
+            <span class="eye-icon" id="toggle-password" onclick="togglePasswordVisibility()">
+              <img src="src/assets/icons/eye-close.svg" id="eye-icon" alt="Mostrar senha" />
+            </span>
+          </div>
+        </div>
+
+        <div id="confirmPasswordGroup" style="display: none">
+          <label for="confirmPassword">Confirmar Senha</label>
+          <div class="password-container">
+            <input class="confirm__password" id="confirmPassword" type="password" placeholder="Confirmar Senha" />
+            <span class="eye-icon" id="toggle-confirm-password" onclick="toggleConfirmPasswordVisibility()">
+              <img src="src/assets/icons/eye-close.svg" id="confirmEyeIcon" alt="Mostrar senha" />
+            </span>
+          </div>
+        </div>
+
+        <button id="submitButton" type="submit">Enviar</button>
+      </form>
+
+      <div class="divider">OU</div>
+
+      <div class="links">
+        <a href="../login/index.html">Voltar para Login</a>
+      </div>
+    </div>
+  </body>
+</html>
