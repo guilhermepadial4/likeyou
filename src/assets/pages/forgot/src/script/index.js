@@ -39,7 +39,7 @@ submitButton.addEventListener("click", function (event) {
     return;
   } else if (!isValidEmail(email)) {
     emailError.textContent = "Por favor, insira um email válido.";
-    emailInput.style.border = "2px solid red"; // Borda vermelha
+    emailInput.style.border = "2px solid green"; // Borda vermelha
     return;
   } else {
     emailError.textContent = ""; // Limpa a mensagem de erro
