@@ -39,7 +39,7 @@ submitButton.addEventListener("click", function (event) {
     return;
   } else if (!isValidEmail(email)) {
     emailError.textContent = "Por favor, insira um email válido.";
-    emailInput.style.border = "2px solid green"; // Borda vermelha
+    emailInput.style.border = "2px solid red"; // Borda vermelha
     return;
   } else {
     emailError.textContent = ""; // Limpa a mensagem de erro
@@ -147,5 +147,6 @@ submitButton.addEventListener("click", function (event) {
   if (newPasswordInput.value && confirmPasswordInput.value) {
     // Aqui você pode redirecionar para a página de login
     window.location.href = "/src/assets/pages/login/index.html";
+    // Substitua pelo caminho correto da sua tela de login
   }
 });
