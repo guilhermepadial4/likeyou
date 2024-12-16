@@ -96,7 +96,6 @@
   }
 }
 
-
 .toggle-btn {
   display: block;
 
@@ -112,6 +111,10 @@
 @media (max-width: 576px) {
   .container__header {
     padding: 0 10px;
+  }
+
+  .search__container {
+    max-width: 200px; /* Reduza o tamanho no mobile */
   }
 
   .input__search {

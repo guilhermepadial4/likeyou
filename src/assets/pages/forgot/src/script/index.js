@@ -146,6 +146,6 @@ submitButton.addEventListener("click", function (event) {
 
   if (newPasswordInput.value && confirmPasswordInput.value) {
     // Aqui você pode redirecionar para a página de login
-    window.location.href = "../../../../../../src/assets/pages/login/index.html"; // Substitua pelo caminho correto da sua tela de login
+    window.location.href = "/src/assets/pages/login/index.html";
   }
 });
