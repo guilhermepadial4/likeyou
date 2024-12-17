@@ -27,37 +27,43 @@ body {
 }
 
 .header {
-  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 20px;
   height: 50px;
+
+  position: relative;
+
+  margin-bottom: 20px;
 }
 
 .arrow {
+  width: 30px;
+  height: 30px;
+
   position: absolute;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
+
   cursor: pointer;
 }
 
 .logo {
+  max-width: 80px;
+
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  max-width: 80px;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  width: 100%;
   gap: 20px;
+
+  width: 100%;
 }
 
 .title {
@@ -69,10 +75,11 @@ body {
 }
 
 .form__group {
-  position: relative;
   display: flex;
   flex-direction: column;
   gap: 5px;
+
+  position: relative;
 }
 
 .form__group label {
@@ -84,11 +91,16 @@ body {
 
 .form__group input {
   font-size: 16px;
-  padding: 12px;
+
+  width: 100%;
+
   border: 1px solid var(--gray-300);
   border-radius: 5px;
+
   background: transparent;
-  width: 100%;
+
+  padding: 12px;
+
   transition: border-color 0.3s ease;
 
   outline: none;
@@ -110,10 +122,10 @@ body {
 }
 
 .password-input-container {
-  position: relative;
-
   width: 100%;
   max-width: 500px;
+
+  position: relative;
 }
 
 .eye-icon {
@@ -121,6 +133,7 @@ body {
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
+
   cursor: pointer;
 }
 
@@ -129,11 +142,20 @@ body {
   height: 20px;
 }
 
+.error__cpf {
+  font-size: 14px;
+  color: red;
+
+  margin-top: 5px;
+}
+
 .form button {
   font-size: 16px;
   font-weight: 600;
   color: var(--gray-100);
+
   background-color: var(--blue-500);
+
   border: none;
   border-radius: 5px;
 
@@ -151,9 +173,12 @@ body {
 .divider {
   display: flex;
   align-items: center;
+
   font-size: 14px;
   color: var(--gray-300);
+
   width: 100%;
+
   margin: 20px 0;
 }
 
@@ -162,7 +187,9 @@ body {
   content: "";
   flex: 1;
   height: 1px;
+
   background: var(--gray-300);
+
   margin: 0 10px;
 }
 
@@ -186,16 +213,17 @@ body {
     margin-top: 50px;
   }
 
-  /* Responsividade */
   @media (max-width: 768px) {
     .login__container {
-      padding: 15px;
       max-width: 90%;
+
+      padding: 15px;
     }
 
     .arrow {
       width: 20px;
       height: 20px;
+
       left: 8px;
     }
 
@@ -205,11 +233,13 @@ body {
 
     .form__group input {
       font-size: 14px;
+
       padding: 10px;
     }
 
     .form button {
       font-size: 14px;
+
       padding: 10px;
     }
 
@@ -225,12 +255,14 @@ body {
   @media (max-width: 576px) {
     .login__container {
       padding: 10px;
+
       border-radius: 5px;
     }
 
     .arrow {
       width: 18px;
       height: 18px;
+
       left: 5px;
     }
 
@@ -240,11 +272,13 @@ body {
 
     .form__group input {
       font-size: 13px;
+
       padding: 8px;
     }
 
     .form button {
       font-size: 13px;
+
       padding: 8px;
     }
 

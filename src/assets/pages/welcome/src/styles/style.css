@@ -67,32 +67,41 @@ body {
 }
 
 .container__btns .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 16px;
   font-weight: 600;
   color: var(--blue-500);
-  background-color: transparent;
-  border: none;
-  padding: 14px 40px;
-  margin-bottom: 15px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
 
-  display: flex; /* Habilita o uso de Flexbox dentro do botão */
-  align-items: center; /* Alinha o texto verticalmente ao centro */
-  justify-content: center; /* Alinha o texto horizontalmente ao centro */
+  background-color: transparent;
+
+  border: none;
+
+  padding: 14px 40px;
+
+  margin-bottom: 15px;
+
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container__btns .btn:hover,
 .container__btns .btn.active {
   color: var(--white);
+
   background-color: var(--blue-300);
+
   border-radius: 8px;
+
   cursor: pointer;
 }
 
 @media (min-width: 768px) {
   .container__btns .btn {
     font-size: 20px;
+
     padding: 18px 100px;
   }
 }
@@ -110,4 +119,3 @@ body {
     padding: 12px 30px;
   }
 }
-

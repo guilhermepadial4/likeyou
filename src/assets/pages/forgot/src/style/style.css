@@ -7,9 +7,11 @@ body {
   justify-content: center;
   align-items: center;
 
-  min-height: 100vh; /* Garante que o body ocupe ao menos a altura da janela */
-  margin: 0; /* Remove margens padrão */
+  min-height: 100vh;
+
   background-color: var(--background-web);
+
+  margin: 0;
 }
 
 .login__container {
@@ -24,21 +26,31 @@ body {
   padding: 20px;
 }
 
+.logo__container {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+
 .logo {
   max-width: 80px;
-  margin: 30px auto; /* Centraliza horizontalmente e adiciona margem ao redor */
+
+  margin: 30px 0;
 }
 
 h1 {
   font-size: 20px;
   font-weight: 600;
   color: var(--dark);
+
   margin-bottom: 20px;
 }
 
 .email-sent-message {
   font-size: 14px;
   color: var(--dark-100);
+
   margin-bottom: 30px;
 }
 
@@ -115,6 +127,7 @@ label {
   padding: 12px;
 
   transition: background-color 0.3s;
+
   cursor: pointer;
 }
 
@@ -164,17 +177,17 @@ label {
   align-items: center;
   gap: 20px;
 
-  color: var(--dark-100);
   font-size: 14px;
+  color: var(--dark-100);
 
   width: 100%;
   text-align: center;
 }
 
 .links a {
-  color: var(--blue-500);
   text-decoration: none;
   font-weight: 600;
+  color: var(--blue-500);
 }
 
 .links a:hover {
@@ -194,7 +207,8 @@ label {
 .verification-group {
   display: flex;
   flex-direction: column;
-  margin-top: 15px; /* Espaço entre os campos */
+
+  margin-top: 15px;
 }
 
 .verification-input-group {
@@ -205,33 +219,44 @@ label {
 }
 
 .verification-input-group input {
-  width: 200px; /* Define um tamanho fixo para o input */
-  padding: 0 10px; /* Padding horizontal */
   font-size: 14px;
-  height: 40px; /* Altura consistente */
-  border: 1px solid #ccc;
+
+  box-sizing: border-box;
+
+  width: 200px;
+  height: 40px;
+
+  border: 1px solid var(--gray-400);
   border-radius: 5px;
-  box-sizing: border-box; /* Inclui padding e bordas */
+
+  padding: 0 10px;
 }
 
 .verification-input-group button {
-  height: 40px; /* Altura igual ao input */
-  padding: 0 16px; /* Padding horizontal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-size: 14px;
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
+  height: 40px;
+
   background-color: var(--blue-500);
+
   border: none;
   border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  align-items: center; /* Centraliza o texto verticalmente */
-  justify-content: center; /* Centraliza o texto horizontalmente */
+
+  padding: 0 16px;
+
   transition: background-color 0.3s;
+
+  cursor: pointer;
 }
 
 .verification-input-group button:disabled {
   background-color: var(--gray-400);
+
   cursor: not-allowed;
 }
 
@@ -244,49 +269,64 @@ label {
 }
 
 .password-container {
-  position: relative;
   width: 100%;
+
+  position: relative;
 }
 
 .new__password {
   font-size: 14px;
   color: var(--dark-100);
+
   width: 100%;
+
   border: 1px solid var(--gray-300);
   border-radius: 5px;
+
   background-color: transparent;
+
   padding: 12px;
-  padding-right: 35px; /* Espaço para o ícone */
+  padding-right: 35px;
+
   margin-bottom: 8px;
-  outline: none;
+
   transition: border-color 0.3s ease;
+
+  outline: none;
 }
 
 .confirm__password {
   font-size: 16px;
   color: var(--dark-100);
+
   width: 100%;
+
+  background-color: transparent;
+
   border: 1px solid var(--gray-300);
   border-radius: 5px;
-  background-color: transparent;
+
   padding: 12px;
-  padding-right: 35px; /* Espaço para o ícone */
+  padding-right: 35px;
+
   margin-bottom: 8px;
-  outline: none;
+
   transition: border-color 0.3s ease;
+
+  outline: none;
 }
 
 .eye-icon {
   position: absolute;
-  right: 10px; /* Distância do lado direito */
+  right: 10px;
   top: 50%;
-  transform: translateY(-50%); /* Centraliza o ícone verticalmente */
+  transform: translateY(-50%);
   cursor: pointer;
   z-index: 1;
 }
 
 .eye-icon img {
-  width: 20px; /* Tamanho do ícone */
+  width: 20px;
   height: 20px;
 }
 
@@ -307,9 +347,9 @@ label {
   margin-bottom: 8px;
   margin-top: 8px;
 
-  outline: none;
-
   transition: border-color 0.3s ease;
+
+  outline: none;
 }
 
 .new__password::placeholder,
@@ -358,7 +398,8 @@ label {
   }
 
   .links {
-    gap: 10px;
     font-size: 12px;
+
+    gap: 10px;
   }
 }

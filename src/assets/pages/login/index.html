@@ -7,6 +7,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="shortcut icon" href="../../images/logo-smile.png" type="image/x-icon" />
+
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="../../../styles/reset.css" />
@@ -18,12 +20,16 @@
   </head>
   <body>
     <div class="login__container">
-      <img src="src/assets/images/logo.png" alt="Logo da Marca" class="logo" />
+      <a href="../../../../index.html">
+        <img src="src/assets/images/logo.png" alt="Logo da Marca" class="logo" />
+      </a>
       <form class="form">
         <div class="form__group">
           <label for="email">Email</label>
           <input id="email" type="email" placeholder="email@likeyou.com" required />
+          <span class="email__error"></span>
         </div>
+
         <div class="form__group">
           <label for="password">Senha</label>
           <div class="password-input-container">
@@ -32,7 +38,10 @@
               <img src="src/assets/icons/eye-close.svg" id="eye-icon" alt="Mostrar senha" />
             </span>
           </div>
+
+          <span class="password__error"></span>
         </div>
+
         <button type="submit">Entrar</button>
       </form>
       <div class="divider">OU</div>

@@ -1,4 +1,3 @@
-// Seleciona os elementos
 const submitButton = document.getElementById("submitButton");
 const emailSentMessage = document.getElementById("emailSentMessage");
 const verificationContainer = document.getElementById("verificationContainer");
@@ -11,92 +10,77 @@ const confirmPasswordGroup = document.getElementById("confirmPasswordGroup");
 const newPasswordInput = document.getElementById("newPassword");
 const confirmPasswordInput = document.getElementById("confirmPassword");
 
-// Adiciona elemento para exibir erros de email
 const emailError = document.createElement("p");
-emailError.style.color = "red";
+emailError.style.color = "#f03e3e";
 emailError.style.fontSize = "14px";
 emailError.style.marginTop = "2px";
 emailError.style.marginBottom = "4px";
 emailInput.insertAdjacentElement("afterend", emailError);
 
-// Função para validar email
+const passwordError = document.createElement("p");
+passwordError.style.color = "#f03e3e";
+passwordError.style.fontSize = "14px";
+passwordError.style.marginTop = "2px";
+passwordError.style.marginBottom = "4px";
+
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
 }
 
-// Adiciona evento ao botão "Enviar"
 submitButton.addEventListener("click", function (event) {
-  event.preventDefault(); // Impede o envio do formulário e a atualização da página
+  event.preventDefault();
 
-  // Captura o valor do email
   const email = emailInput.value.trim();
 
-  // Verifica se o email é válido
   if (!email) {
     emailError.textContent = "Por favor, preencha o campo de email.";
-    emailInput.style.border = "2px solid red"; // Borda vermelha
+    emailInput.style.border = "2px solid #f03e3e";
     return;
   } else if (!isValidEmail(email)) {
     emailError.textContent = "Por favor, insira um email válido.";
-    emailInput.style.border = "2px solid red"; // Borda vermelha
+    emailInput.style.border = "2px solid #f03e3e";
     return;
   } else {
-    emailError.textContent = ""; // Limpa a mensagem de erro
-    emailInput.style.border = ""; // Remove a borda vermelha
+    emailError.textContent = "";
+    emailInput.style.border = "";
   }
 
-  // Atualiza o parágrafo com o email
   verificationMessage.innerHTML = `Código de Verificação enviado para <span>${email}</span>`;
-
-  // Atualiza o parágrafo para informar que o código foi enviado
   emailSentMessage.textContent = "Um código foi enviado para o email fornecido.";
-
-  // Exibe o campo de verificação e o botão "Verificar"
   verificationContainer.style.display = "flex";
-
-  // Desabilita o campo de email
   emailInput.disabled = true;
 });
 
-// Adiciona evento ao botão "Verificar"
 verifyButton.addEventListener("click", function (event) {
-  event.preventDefault(); // Impede o envio do formulário e a atualização da página
+  event.preventDefault();
 
   const verificationCode = verificationInput.value;
 
-  // Se o código de verificação tiver exatamente 4 números
   if (/^\d{4}$/.test(verificationCode)) {
-    // Exibe os campos de nova senha e confirmação
     newPasswordGroup.style.display = "block";
     confirmPasswordGroup.style.display = "block";
 
-    // Habilita os campos de senha
     newPasswordInput.removeAttribute("disabled");
     confirmPasswordInput.removeAttribute("disabled");
 
-    // Desabilita o campo de código e o botão de verificação
     verificationInput.disabled = true;
     verifyButton.disabled = true;
   }
 });
 
-// Adiciona evento para o input de verificação
 verificationInput.addEventListener("input", () => {
-  // Remove caracteres não numéricos
   verificationInput.value = verificationInput.value.replace(/\D/g, "");
 
   const inputValue = verificationInput.value;
 
-  // Verifica se o input tem exatamente 4 números
   if (/^\d{4}$/.test(inputValue)) {
-    verifyButton.disabled = false; // Habilita o botão
+    verifyButton.disabled = false;
   } else {
-    verifyButton.disabled = true; // Desabilita o botão
+    verifyButton.disabled = true;
   }
 });
 
-// Função para alternar a visibilidade da nova senha
 function togglePasswordVisibility() {
   const passwordInput = document.getElementById("newPassword");
   const eyeIcon = document.getElementById("eye-icon");
@@ -112,7 +96,6 @@ function togglePasswordVisibility() {
   }
 }
 
-// Função para alternar a visibilidade da senha de confirmação
 function toggleConfirmPasswordVisibility() {
   const confirmPasswordInput = document.getElementById("confirmPassword");
   const eyeIcon = document.getElementById("confirmEyeIcon");
@@ -128,25 +111,81 @@ function toggleConfirmPasswordVisibility() {
   }
 }
 
-// Adiciona evento para os inputs de senha para habilitar o botão "Enviar"
-newPasswordInput.addEventListener("input", checkPasswords);
-confirmPasswordInput.addEventListener("input", checkPasswords);
+function clearErrorMessages() {
+  // Remove mensagens de erro, se existirem
+  if (document.getElementById("passwordError1")) document.getElementById("passwordError1").remove();
+  if (document.getElementById("passwordError2")) document.getElementById("passwordError2").remove();
 
-function checkPasswords() {
-  if (newPasswordInput.value && confirmPasswordInput.value) {
-    submitButton.disabled = false; // Habilita o botão "Enviar"
-  } else {
-    submitButton.disabled = true; // Desabilita o botão "Enviar"
-  }
+  // Remove bordas vermelhas
+  newPasswordInput.style.border = "";
+  confirmPasswordInput.style.border = "";
 }
 
-// Função para redirecionar para a tela de login após o envio
+// Adiciona evento para limpar erros enquanto o usuário digita
+newPasswordInput.addEventListener("input", clearErrorMessages);
+confirmPasswordInput.addEventListener("input", clearErrorMessages);
+
 submitButton.addEventListener("click", function (event) {
   event.preventDefault();
 
-  if (newPasswordInput.value && confirmPasswordInput.value) {
-    // Aqui você pode redirecionar para a página de login
+  // Verifica se os inputs de senha estão visíveis
+  if (newPasswordGroup.style.display === "block" && confirmPasswordGroup.style.display === "block") {
+    const newPassword = newPasswordInput.value.trim();
+    const confirmPassword = confirmPasswordInput.value.trim();
+
+    clearErrorMessages();
+
+    // Criação dinâmica de mensagens de erro
+    const passwordError1 = document.createElement("div");
+    passwordError1.id = "passwordError1";
+    passwordError1.style.fontSize = "14px";
+    passwordError1.style.color = "#f03e3e";
+
+    const passwordError2 = document.createElement("div");
+    passwordError2.id = "passwordError2";
+    passwordError2.style.fontSize = "14px";
+    passwordError2.style.color = "#f03e3e";
+
+    // Verifica se os campos estão preenchidos
+    if (!newPassword || !confirmPassword) {
+      passwordError1.textContent = "Por favor, preencha os campos de senha.";
+      passwordError2.textContent = "Por favor, preencha os campos de senha.";
+
+      newPasswordGroup.appendChild(passwordError1);
+      confirmPasswordGroup.appendChild(passwordError2);
+
+      newPasswordInput.style.border = "2px solid #f03e3e";
+      confirmPasswordInput.style.border = "2px solid #f03e3e";
+      return;
+    }
+
+    // Verifica se a senha tem pelo menos 8 caracteres
+    if (newPassword.length < 8) {
+      passwordError1.textContent = "A senha deve ter no mínimo 8 caracteres.";
+      passwordError2.textContent = "A senha deve ter no mínimo 8 caracteres.";
+
+      newPasswordGroup.appendChild(passwordError1);
+      confirmPasswordGroup.appendChild(passwordError2);
+
+      newPasswordInput.style.border = "2px solid #f03e3e";
+      confirmPasswordInput.style.border = "2px solid #f03e3e";
+      return;
+    }
+
+    // Verifica se as senhas são iguais
+    if (newPassword !== confirmPassword) {
+      passwordError1.textContent = "As senhas não são iguais.";
+      passwordError2.textContent = "As senhas não são iguais.";
+
+      newPasswordGroup.appendChild(passwordError1);
+      confirmPasswordGroup.appendChild(passwordError2);
+
+      newPasswordInput.style.border = "2px solid #f03e3e";
+      confirmPasswordInput.style.border = "2px solid #f03e3e";
+      return;
+    }
+
+    // Redireciona para a página de login se tudo estiver correto
     window.location.href = "/src/assets/pages/login/index.html";
-    // Substitua pelo caminho correto da sua tela de login
   }
 });

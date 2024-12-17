@@ -8,6 +8,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="shortcut icon" href="../../images/logo-smile.png" type="image/x-icon" />
+
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="../../../styles/reset.css" />
@@ -24,7 +26,9 @@
           <img src="src/assets/icons/arrow-left.svg" alt="Seta Esquerda" class="arrow" />
         </a>
 
-        <img src="src/assets/images/logo.png" alt="Logo da Marca" class="logo" />
+        <a href="../../../../index.html">
+          <img src="src/assets/images/logo.png" alt="Logo da Marca" class="logo" />
+        </a>
       </div>
 
       <form class="form">
@@ -37,6 +41,7 @@
         <div class="form__group">
           <label for="cpfInput">CPF</label>
           <input id="cpfInput" type="text" placeholder="000.000.000.00" required maxlength="14" />
+          <span class="error__cpf"></span>
         </div>
 
         <div class="form__group">
@@ -58,7 +63,7 @@
             </span>
           </div>
         </div>
-        <button type="submit">Cadastre-se</button>
+        <button id="submitBtn" type="submit">Cadastre-se</button>
       </form>
       <div class="divider">OU</div>
       <div class="links">
