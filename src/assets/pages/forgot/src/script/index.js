@@ -83,7 +83,7 @@ verificationInput.addEventListener("input", () => {
 
 function togglePasswordVisibility() {
   const passwordInput = document.getElementById("newPassword");
-  const eyeIcon = document.getElementById("eye-icon");
+  const eyeIcon = document.getElementById("eyeIcon");
 
   if (passwordInput.type === "password") {
     passwordInput.type = "text";
@@ -185,6 +185,25 @@ submitButton.addEventListener("click", function (event) {
       return;
     }
 
-    window.location.href = window.location.origin + "/src/assets/pages/login/index.html";
+    // Chama a função de sucesso
+    showSuccessMessage();
   }
 });
+
+function showSuccessMessage() {
+  const successMessage = document.getElementById("successMessage");
+  const overlay = document.getElementById("overlay");
+  successMessage.style.display = "block"; // Exibe a mensagem de sucesso
+  overlay.style.display = "block"; // Exibe o fundo escuro
+  document.body.classList.add("modal-open");
+}
+
+// Função para esconder a mensagem de sucesso (fechar o toggle)
+document.getElementById("closeButton").addEventListener("click", function () {
+  const successMessage = document.getElementById("successMessage");
+  const overlay = document.getElementById("overlay");
+  successMessage.style.display = "none"; // Esconde a mensagem de sucesso
+  overlay.style.display = "none"; // Esconde o fundo escuro
+  document.body.classList.remove("modal-open");
+});
+

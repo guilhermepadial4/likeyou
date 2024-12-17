@@ -31,7 +31,7 @@
 
       <p class="email-sent-message" id="emailSentMessage">Um código será enviado para o seu email para redefinir sua senha</p>
 
-      <form class="form">
+      <form class="form" id="resetForm">
         <div class="form__group">
           <label for="email">Email</label>
           <input id="email" type="email" placeholder="email@exemplo.com" required />
@@ -48,11 +48,10 @@
 
         <div id="newPasswordGroup" style="display: none">
           <label for="newPassword">Nova Senha</label>
-
           <div class="password-container">
             <input class="new__password" id="newPassword" type="password" placeholder="Nova Senha" />
-            <span class="eye-icon" id="toggle-password" onclick="togglePasswordVisibility()">
-              <img src="src/assets/icons/eye-close.svg" id="eye-icon" alt="Mostrar senha" />
+            <span class="eye-icon" onclick="togglePasswordVisibility('newPassword', 'eyeIcon')">
+              <img src="src/assets/icons/eye-close.svg" id="eyeIcon" alt="Mostrar senha" />
             </span>
           </div>
         </div>
@@ -61,7 +60,7 @@
           <label for="confirmPassword">Confirmar Senha</label>
           <div class="password-container">
             <input class="confirm__password" id="confirmPassword" type="password" placeholder="Confirmar Senha" />
-            <span class="eye-icon" id="toggle-confirm-password" onclick="toggleConfirmPasswordVisibility()">
+            <span class="eye-icon" onclick="togglePasswordVisibility('confirmPassword', 'confirmEyeIcon')">
               <img src="src/assets/icons/eye-close.svg" id="confirmEyeIcon" alt="Mostrar senha" />
             </span>
           </div>
@@ -69,6 +68,16 @@
 
         <button id="submitButton" type="submit">Enviar</button>
       </form>
+
+      <div id="overlay" style="display: none"></div>
+
+      <!-- Toggle de Sucesso -->
+      <div id="successMessage" style="display: none">
+        <span id="closeButton" style="cursor: pointer">&times;</span>
+        <!-- Botão "X" -->
+        <p>Senha redefinida com sucesso!</p>
+        <a href="../login/index.html">Ir para Login</a>
+      </div>
 
       <div class="divider">OU</div>
 
