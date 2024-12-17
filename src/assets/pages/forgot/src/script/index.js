@@ -185,7 +185,6 @@ submitButton.addEventListener("click", function (event) {
       return;
     }
 
-    // Redireciona para a página de login se tudo estiver correto
-    window.location.href = "/src/assets/pages/login/index.html";
+    window.location.href = window.location.origin + "/src/assets/pages/login/index.html";
   }
 });
