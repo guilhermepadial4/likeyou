@@ -60,7 +60,7 @@
           <label for="confirmPassword">Confirmar Senha</label>
           <div class="password-container">
             <input class="confirm__password" id="confirmPassword" type="password" placeholder="Confirmar Senha" />
-            <span class="eye-icon" onclick="togglePasswordVisibility('confirmPassword', 'confirmEyeIcon')">
+            <span class="eye-icon" onclick="toggleConfirmPasswordVisibility('confirmPassword', 'confirmEyeIcon')">
               <img src="src/assets/icons/eye-close.svg" id="confirmEyeIcon" alt="Mostrar senha" />
             </span>
           </div>
@@ -71,10 +71,8 @@
 
       <div id="overlay" style="display: none"></div>
 
-      <!-- Toggle de Sucesso -->
       <div id="successMessage" style="display: none">
         <span id="closeButton" style="cursor: pointer">&times;</span>
-        <!-- Botão "X" -->
         <p>Senha redefinida com sucesso!</p>
         <a href="../login/index.html">Ir para Login</a>
       </div>

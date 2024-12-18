@@ -7,7 +7,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  height: 100vh;
+  min-height: 100vh;
 
   background-color: var(--background-web);
 }
@@ -126,6 +126,12 @@ body {
   max-width: 500px;
 
   position: relative;
+}
+
+.input-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
 }
 
 .eye-icon {
