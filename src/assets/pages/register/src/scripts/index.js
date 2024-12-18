@@ -1,3 +1,18 @@
+function togglePasswordVisibility() {
+  const passwordInput = document.getElementById("password");
+  const eyeIcon = document.getElementById("eye-icon");
+
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    eyeIcon.src = "./src/assets/icons/eye-open.svg";
+    eyeIcon.alt = "Ocultar senha";
+  } else {
+    passwordInput.type = "password";
+    eyeIcon.src = "./src/assets/icons/eye-close.svg";
+    eyeIcon.alt = "Mostrar senha";
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const inputCpf = document.getElementById("cpfInput");
   const errorCpf = document.querySelector(".error__cpf");
