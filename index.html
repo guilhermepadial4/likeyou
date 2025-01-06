@@ -17,7 +17,7 @@
 
     <script defer src="src/scripts/index.js"></script>
 
-    <title>Likeyou</title>
+    <title>Likeyou-feed</title>
   </head>
   <body>
     <header class="container__header">
@@ -66,13 +66,13 @@
           </p>
         </div>
         <div class="card__actions">
-          <button class="card__button like">
+          <button class="card__button like" onclick="handleLike(this)">
             <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
-            Positivo
+            Positivo <span class="like__count">0</span>
           </button>
-          <button class="card__button dislike">
+          <button class="card__button dislike" onclick="handleDislike(this)">
             <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
-            Negativo
+            Negativo <span class="dislike__count">0</span>
           </button>
         </div>
       </div>
@@ -95,13 +95,13 @@
           </p>
         </div>
         <div class="card__actions">
-          <button class="card__button like">
+          <button class="card__button like" onclick="handleLike(this)">
             <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
-            Positivo
+            Positivo <span class="like__count">0</span>
           </button>
-          <button class="card__button dislike">
+          <button class="card__button dislike" onclick="handleDislike(this)">
             <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
-            Negativo
+            Negativo <span class="dislike__count">0</span>
           </button>
         </div>
       </div>
@@ -124,13 +124,13 @@
           </p>
         </div>
         <div class="card__actions">
-          <button class="card__button like">
+          <button class="card__button like" onclick="handleLike(this)">
             <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
-            Positivo
+            Positivo <span class="like__count">0</span>
           </button>
-          <button class="card__button dislike">
+          <button class="card__button dislike" onclick="handleDislike(this)">
             <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
-            Negativo
+            Negativo <span class="dislike__count">0</span>
           </button>
         </div>
       </div>
@@ -152,13 +152,13 @@
           </p>
         </div>
         <div class="card__actions">
-          <button class="card__button like">
+          <button class="card__button like" onclick="handleLike(this)">
             <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
-            Positivo
+            Positivo <span class="like__count">0</span>
           </button>
-          <button class="card__button dislike">
+          <button class="card__button dislike" onclick="handleDislike(this)">
             <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
-            Negativo
+            Negativo <span class="dislike__count">0</span>
           </button>
         </div>
       </div>
@@ -180,13 +180,117 @@
           </p>
         </div>
         <div class="card__actions">
-          <button class="card__button like">
+          <button class="card__button like" onclick="handleLike(this)">
             <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
-            Positivo
+            Positivo <span class="like__count">0</span>
           </button>
-          <button class="card__button dislike">
+          <button class="card__button dislike" onclick="handleDislike(this)">
             <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
-            Negativo
+            Negativo <span class="dislike__count">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-container">
+          <img
+            class="card__image"
+            src="https://nsabers.com/cdn/shop/articles/bebec223da75d29d8e03027fd2882262.png?v=1708781179"
+            alt="Imagem do usuário"
+          />
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Anakin Skywalker</h3>
+          <p class="card__bio">
+            Anakin Skywalker, mais tarde conhecido como Darth Vader, foi um Jedi promissor seduzido pelo lado sombrio da Força. Manipulado por Palpatine, ajudou a exterminar os Jedi e consolidar o Império Galáctico. Como braço direito do Imperador, espalhou terror pela galáxia até se redimir ao salvar seu filho, Luke, destruindo Palpatine e trazendo equilíbrio à Força.
+          </p>
+        </div>
+        <div class="card__actions">
+          <button class="card__button like" onclick="handleLike(this)">
+            <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
+            Positivo <span class="like__count">0</span>
+          </button>
+          <button class="card__button dislike" onclick="handleDislike(this)">
+            <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
+            Negativo <span class="dislike__count">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-container">
+          <img
+            class="card__image"
+            src="https://imgcdn.stablediffusionweb.com/2024/4/29/9ce847cf-bfc6-4738-b372-4607b872fc14.jpg"
+            alt="Imagem do usuário"
+          />
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Luke Skywalker</h3>
+          <p class="card__bio">
+            Luke Skywalker, filho de Anakin Skywalker, foi um fazendeiro que se tornou o maior herói da galáxia. Treinado como Jedi por Obi-Wan Kenobi e Yoda, liderou a Aliança Rebelde contra o Império. Enfrentou Darth Vader, descobriu ser seu pai e o redimiu ao derrotar o Imperador. Após a queda do Império, tentou restaurar a Ordem Jedi, mas enfrentou desafios que o levaram ao exílio. Retornou para inspirar uma nova geração e sacrificar-se pelo bem da galáxia.
+          </p>
+        </div>
+        <div class="card__actions">
+          <button class="card__button like" onclick="handleLike(this)">
+            <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
+            Positivo <span class="like__count">0</span>
+          </button>
+          <button class="card__button dislike" onclick="handleDislike(this)">
+            <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
+            Negativo <span class="dislike__count">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-container">
+          <img
+            class="card__image"
+            src="https://images.fun.com/blog/images/615/2130-1/princess-leia-organa.jpg"
+            alt="Imagem do usuário"
+          />
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Leia Organa</h3>
+          <p class="card__bio">
+            Princesa Leia Organa, filha de Anakin Skywalker e irmã gêmea de Luke, foi uma líder corajosa da Aliança Rebelde. Conhecida por sua inteligência e bravura, ajudou a destruir a Estrela da Morte e enfrentar o Império. Após a guerra, tornou-se uma figura-chave na Nova República e fundou a Resistência contra a Primeira Ordem. Jedi em potencial, usou a Força para proteger aqueles que amava. Seu legado como estrategista, guerreira e símbolo de esperança marcou a galáxia para sempre.
+          </p>
+        </div>
+        <div class="card__actions">
+          <button class="card__button like" onclick="handleLike(this)">
+            <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
+            Positivo <span class="like__count">0</span>
+          </button>
+          <button class="card__button dislike" onclick="handleDislike(this)">
+            <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
+            Negativo <span class="dislike__count">0</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__image-container">
+          <img
+            class="card__image"
+            src="https://rollingstone.com.br/media/uploads/han_solo_-_reprducao_george_lucas_film.jpg"
+            alt="Imagem do usuário"
+          />
+        </div>
+        <div class="card__body">
+          <h3 class="card__name">Han Solo</h3>
+          <p class="card__bio">
+            Han Solo, originalmente um contrabandista independente, tornou-se um herói da Aliança Rebelde. Conhecido por sua habilidade como piloto da Millennium Falcon e sua parceria com Chewbacca, ajudou a destruir a Estrela da Morte e liderou missões cruciais contra o Império. Inicialmente cínico, transformou-se em um líder leal e corajoso, casando-se com Leia Organa e tendo um filho, Ben Solo. Sua bravura e charme irresistível o tornaram uma lenda na galáxia.
+          </p>
+        </div>
+        <div class="card__actions">
+          <button class="card__button like" onclick="handleLike(this)">
+            <img src="src/assets/icons/thumbs-up.svg" alt="Gostei" />
+            Positivo <span class="like__count">0</span>
+          </button>
+          <button class="card__button dislike" onclick="handleDislike(this)">
+            <img src="src/assets/icons/thumbs-down.svg" alt="Não gostei" />
+            Negativo <span class="dislike__count">0</span>
           </button>
         </div>
       </div>
